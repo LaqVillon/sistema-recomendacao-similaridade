@@ -1,4 +1,4 @@
-# Game
+# Sistema de Recomendação por Similaridade
 
 Este projeto utliza um sistema por meio de uma aplicação de streamlit para o cálculo de similaridade de cosseno. No terminal, execute o comando:
 
