@@ -7,7 +7,8 @@ streamlit run app.py
 ```
 A descrição do projeto é realizado neste [link](https://laqvillon.github.io/post/chapter-2/)
 
-## Necessary technologies:
+## Requisitos:
+  - conda 23.7.4
   - python 3.9.5  
   - streamlit 1.30.0
 
