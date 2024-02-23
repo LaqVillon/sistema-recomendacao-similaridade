@@ -5,7 +5,7 @@ Este projeto utliza um sistema por meio de uma aplicação de streamlit para o c
 ```
 streamlit run app.py
 ```
-A descrição do projeto é realizado neste [link](https://laqvillon.github.io/post/chapter-2/)
+A descrição do projeto é mostrado neste [link](https://laqvillon.github.io/post/chapter-2/)
 
 ## Requisitos:
   - conda 23.7.4
