@@ -1,6 +1,6 @@
 # Sistema de Recomendação por Similaridade
 
-Este projeto utliza um sistema por meio de uma aplicação de streamlit para o cálculo de similaridade de cosseno. No terminal, execute o comando:
+Este projeto utliza um sistema por meio de uma aplicação de streamlit para o cálculo de similaridade de cosseno. No terminal e na pasta 'app', execute o comando:
 
 ```
 streamlit run app.py
