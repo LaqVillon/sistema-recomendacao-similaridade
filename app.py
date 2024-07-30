@@ -8,7 +8,7 @@ Autor: Luis Armando Quintanilla Villon
 
 import streamlit as st
 from compatibilidade import vizinhos_compativeis
-from front import grafico_compatibilidade, tabela_compatibilidade, id_vizinhos
+from front import grafico_compatibilidade, id_vizinhos
 
 
 def config_inicial():
@@ -20,7 +20,7 @@ def config_inicial():
     # Mostrar uma imagem grande no topo
     st.image('./img/apt-6.png', use_column_width=True)
     # Inserir um espaço vertical de 60px
-    st.markdown(f'<div style="margin-top: 60px;"></div>', unsafe_allow_html=True)
+    st.markdown(f'<div style="margin-top: 30px;"></div>', unsafe_allow_html=True)
 
 
 def input_resultado_compatibilidade():
@@ -30,10 +30,12 @@ def input_resultado_compatibilidade():
     # Configurar o sidebar com inputs e um botão
     resultado = None
     with st.sidebar:
-        st.header("Quem está morando no apartamento atualmente? \n Escreva o ID dos proprietários:")
+        st.header("Seleção de Proprietários")
+        st.write("Quem está morando no apartamento atualmente? \n Escreva o ID dos proprietários:")
         proprietario1 = st.text_input("Proprietário 1")
         proprietario2 = st.text_input("Proprietário 2")
         proprietario3 = st.text_input("Proprietário 3")
+        st.header("Seleção de futuros vizinhos")
         num_vizinhos = st.text_input("Quantos novos colegas ou vizinhos você deseja procurar?")
         if st.button('PESQUISE NOVOS VIZINHOS'):
             # VerifiCar se o número de colegas é um valor válido
@@ -60,19 +62,13 @@ def print_resultado(resultado):
     if isinstance(resultado, str):
         st.error(resultado)    
     elif resultado is not None:
-        # Separando o layout em 2 colunas
-        cols = st.columns((1))
-        # O gráfico e seu título deve apareçer na primeira coluna
-        with cols[0]:  
-            st.write("Compatibilidade com os vizinhos recomendados:")
-            fig_grafico = grafico_compatibilidade(resultado[1])
-            st.pyplot(fig_grafico)
-        # A tabela e seu título deve apareçer na primeira coluna
-        with cols[0]:
-            st.write("Comparação entre as preferências de potenciais vizinhos (ID):")
-            fig_tabla = tabela_compatibilidade(resultado)
-            st.plotly_chart(fig_tabla, use_container_width=True)
-    
+        st.markdown("## Resultados da Compatibilidade")
+        st.markdown("---")
+        st.write("Compatibilidade (%) com os vizinhos recomendados:")
+        fig_grafico = grafico_compatibilidade(resultado[1])
+        st.pyplot(fig_grafico)
+        st.markdown("---")
+  
     
 def main() -> None:
     config_inicial()

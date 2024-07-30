@@ -15,10 +15,10 @@ def dados_preprocesados():
     """
     Função que carga e pre-processa os dados
     """
-    df = pd.read_csv('dataset_proprietarios.csv', index_col = 'id')
+    df = pd.read_csv('dataset/dataset_proprietarios.csv', index_col = 'id')
     
     # One Hot Encoding
-    encoder = OneHotEncoder(sparse=False)
+    encoder = OneHotEncoder(sparse_output=False)
     df_encoded = encoder.fit_transform(df)
         
     # Calcule a matriz de similaridade usando o produto escalar e define o intervalo
